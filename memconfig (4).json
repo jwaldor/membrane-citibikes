@@ -1,0 +1,139 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "actions": [],
+        "fields": [
+          {
+            "name": "stations",
+            "type": "List",
+            "ofType": "Station"
+          }
+        ]
+      },
+      {
+        "name": "Station",
+        "actions": [],
+        "fields": [
+          {
+            "name": "station_id",
+            "type": "String",
+            "description": "Required. Identifier of a station.",
+            "hints": {
+              "primary": true
+            }
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "description": "Required. The name of the station."
+          },
+          {
+            "name": "short_name",
+            "type": "String",
+            "description": "Required. A short identifier for the station."
+          },
+          {
+            "name": "lat",
+            "type": "Float",
+            "description": "Required. The latitude coordinate of the station."
+          },
+          {
+            "name": "lon",
+            "type": "Float",
+            "description": "Required. The longitude coordinate of the station."
+          },
+          {
+            "name": "capacity",
+            "type": "Int",
+            "description": "Required. The total capacity of the station."
+          },
+          {
+            "name": "region_id",
+            "type": "String",
+            "description": "Required. The region identifier for the station."
+          },
+          {
+            "name": "rental_methods",
+            "type": "Json",
+            "description": "Required. Available methods for renting bikes."
+          },
+          {
+            "name": "is_virtual_station",
+            "type": "Boolean",
+            "description": "Optional. Indicates if this is a virtual station with no physical infrastructure."
+          },
+          {
+            "name": "station_area",
+            "type": "Json",
+            "description": "Optional. A GeoJSON MultiPolygon that describes the area of a virtual station."
+          },
+          {
+            "name": "is_valet_station",
+            "type": "Boolean",
+            "description": "Optional. Indicates if this station is attended by staff who can park vehicles."
+          },
+          {
+            "name": "rental_uris",
+            "type": "Json",
+            "description": "Optional. URIs for deep links to rental apps."
+          },
+          {
+            "name": "num_vehicles_available",
+            "type": "Int",
+            "description": "Required. Number of functional vehicles physically at the station that may be offered for rental."
+          },
+          {
+            "name": "num_vehicles_disabled",
+            "type": "Int",
+            "description": "Optional. Number of disabled vehicles of any type at the station."
+          },
+          {
+            "name": "num_docks_available",
+            "type": "Int",
+            "description": "Optional. Number of functional docks physically at the station that are able to accept vehicles for return."
+          },
+          {
+            "name": "num_docks_disabled",
+            "type": "Int",
+            "description": "Optional. Number of disabled dock points at the station."
+          },
+          {
+            "name": "is_installed",
+            "type": "Boolean",
+            "description": "Required. Indicates if the station is currently installed on the street."
+          },
+          {
+            "name": "is_renting",
+            "type": "Boolean",
+            "description": "Required. Indicates if the station is currently renting vehicles."
+          },
+          {
+            "name": "is_returning",
+            "type": "Boolean",
+            "description": "Required. Indicates if the station is accepting vehicle returns."
+          },
+          {
+            "name": "last_reported",
+            "type": "String",
+            "description": "Required. The last time this station reported its status to the operator's backend."
+          },
+          {
+            "name": "vehicle_types_available",
+            "type": "Json",
+            "description": "Optional. Array of objects representing the number of each vehicle type available at the station."
+          },
+          {
+            "name": "vehicle_docks_available",
+            "type": "Json",
+            "description": "Optional. Array of objects representing the number of docks available for certain vehicle types."
+          }
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "http": "http:"
+  }
+}
